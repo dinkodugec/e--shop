@@ -14,7 +14,8 @@ class KorisnikController extends Controller
      */
     public function index()
     {
-        return Korisnik::all();
+        $korisnici = Korisnik::all();
+        return view('users.index', compact('korisnici'));  //compact - vrijednost varijable prosljeđuje na view pod tim imenom
     }
 
     /**
@@ -83,3 +84,4 @@ class KorisnikController extends Controller
         //
     }
 }
+

@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('template.template');
+    return view('pages.home');
 });
 
 Route::resource('/korisnik', KorisnikController::class);
