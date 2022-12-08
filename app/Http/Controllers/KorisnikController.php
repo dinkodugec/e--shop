@@ -26,7 +26,11 @@ class KorisnikController extends Controller
      */
     public function create()
     {
-        //
+        $uloge = Uloga::all();
+
+        $korisnik = new Korisnik();
+
+       return view('users.novi', compact('uloge', 'korisnik'));
     }
 
     /**
@@ -37,7 +41,25 @@ class KorisnikController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+
+            'ime' => 'required',
+            'prezime' => 'required',
+            'email' => 'required|email',
+
+
+
+       ]);
+
+        $korisnik = new Korisnik();
+
+       $korisnik->ime = $request->ime;
+       $korisnik->prezime = $request->prezime;
+       $korisnik->email = $request->email;
+       $korisnik->id_uloga = $request->uloga;
+       $korisnik->save();
+
+       return redirect()->route('korisnik.index');
     }
 
     /**

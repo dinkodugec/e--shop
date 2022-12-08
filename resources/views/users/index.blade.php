@@ -11,6 +11,7 @@
         <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
     </div>
     <div class="card-body">
+        <a class="btn btn-primary" href="{{ route('korisnik.create') }}">Novi Korisnik</a>
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
