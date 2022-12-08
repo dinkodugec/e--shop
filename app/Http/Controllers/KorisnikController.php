@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Korisnik;
+use App\Models\Uloga;
 use Illuminate\Http\Request;
 
 class KorisnikController extends Controller
@@ -58,7 +59,10 @@ class KorisnikController extends Controller
      */
     public function edit(Korisnik $korisnik)
     {
-        //
+          $uloge = Uloga::all();
+
+
+        return view('users.edit', compact('korisnik', 'uloge'));
     }
 
     /**
@@ -70,7 +74,7 @@ class KorisnikController extends Controller
      */
     public function update(Request $request, Korisnik $korisnik)
     {
-        //
+       dd($request->all(), $korisnik); // request all vraca sve iz forme
     }
 
     /**
@@ -84,4 +88,3 @@ class KorisnikController extends Controller
         //
     }
 }
-
