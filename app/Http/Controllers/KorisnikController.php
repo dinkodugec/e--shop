@@ -61,7 +61,6 @@ class KorisnikController extends Controller
     {
           $uloge = Uloga::all();
 
-
         return view('users.edit', compact('korisnik', 'uloge'));
     }
 
@@ -74,7 +73,16 @@ class KorisnikController extends Controller
      */
     public function update(Request $request, Korisnik $korisnik)
     {
-       dd($request->all(), $korisnik); // request all vraca sve iz forme
+       /* dd($request->all(), $korisnik); */ // request all vraca sve iz forme
+
+       $korisnik->ime = $request->ime;
+       $korisnik->prezime = $request->prezime;
+       $korisnik->email = $request->email;
+       $korisnik->id_uloga = $request->uloga;
+       $korisnik->save();
+
+       return redirect()->route('korisnik.index');
+
     }
 
     /**

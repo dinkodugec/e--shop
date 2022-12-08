@@ -33,14 +33,11 @@
 
         <div class="form-group">
           <label for="exampleFormControlSelect1">Odaberi ulogu</label>
-          <select class="form-control" id="name" name="uloga">
+          <select class="form-control" id="uloga" name="uloga">
             <option value="-1">Izaberi</option>
+
             @foreach ($uloge  as  $uloga)
-                 <option value="{{ $uloga->id }}"
-                   @if ($uloga->id == $korisnik->id_uloga)
-                       selcted
-                   @endif
-                  >{{ $uloga->naziv }}</option>
+                 <option value="{{ $uloga->id }}" @if ($uloga->id == $korisnik->id_uloga) selected="selected" @endif> {{ $uloga->naziv }} </option>
             @endforeach
 
           </select>
