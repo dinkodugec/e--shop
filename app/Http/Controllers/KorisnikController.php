@@ -75,6 +75,16 @@ class KorisnikController extends Controller
     {
        /* dd($request->all(), $korisnik); */ // request all vraca sve iz forme
 
+       $request->validate([
+
+            'ime' => 'required',
+            'prezime' => 'required',
+            'email' => 'required|email',
+
+
+
+       ]);
+
        $korisnik->ime = $request->ime;
        $korisnik->prezime = $request->prezime;
        $korisnik->email = $request->email;

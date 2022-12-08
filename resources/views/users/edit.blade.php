@@ -16,18 +16,27 @@
         @csrf
         <div class="form-group">
           <label for="exampleInputEmail1">Ime</label>
-          <input type="text" class="form-control" id="ime" value="{{ $korisnik->ime }}"  name="ime" >
+          <input type="text" class="form-control @error('ime') is-invalid @enderror" id="ime" value="{{ $korisnik->ime }}"  name="ime" >
+             @error('ime')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
         </div>
 
         <div class="form-group">
           <label for="exampleInputEmail1">Prezime</label>
-          <input type="text" class="form-control" id="prezime" value="{{ $korisnik->prezime }}" name="prezime" >
+          <input type="text" class="form-control  @error('prezime') is-invalid @enderror" id="prezime" value="{{ $korisnik->prezime }}" name="prezime" >
+          @error('prezime')
+          <div class="alert alert-danger">{{ $message }}</div>
+          @enderror
         </div>
 
         <div class="form-group">
           <label for="exampleInputEmail1">Email address</label>
-          <input type="email" class="form-control" value="{{ $korisnik->email }}" id="email"
+          <input type="email" class="form-control  @error('email') is-invalid @enderror" value="{{ $korisnik->email }}" id="email"
           name="email">
+          @error('email')
+          <div class="alert alert-danger">{{ $message }}</div>
+          @enderror
         </div>
 
 
