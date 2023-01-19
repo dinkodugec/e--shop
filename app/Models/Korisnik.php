@@ -16,6 +16,14 @@ class Korisnik extends Model
     protected $table = "korisnik";
 
 
+    public function uloga()
+    {
+
+         return $this->belongsTo(Uloga::class, 'id_uloga');
+
+    }
+
+
 
 
 }

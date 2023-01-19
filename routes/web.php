@@ -22,3 +22,5 @@ Route::resource('/korisnik', KorisnikController::class);
 Route::resource('/proizvod', ProizvodController::class);
 Route::resource('/uloga', UlogaController::class);
 Route::resource('/kategorija', KategorijaController::class);
+
+Route::get('/obrisiKorisnika/{korisnik}', [KorisnikController::class, 'obrisi'] )->name('obrisiKorisnika');

@@ -125,6 +125,13 @@ class KorisnikController extends Controller
      */
     public function destroy(Korisnik $korisnik)
     {
-        //
+          $korisnik->delete();
+          return redirect()->route('korisnik.index');
+    }
+
+    public function obrisi(Korisnik $korisnik)
+    {
+          $korisnik->delete();
+          return redirect()->route('korisnik.index');
     }
 }

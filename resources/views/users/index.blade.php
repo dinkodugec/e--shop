@@ -20,7 +20,9 @@
                         <th>Ime</th>
                         <th>Prezime</th>
                         <th>Email</th>
+                        <th>Uloga</th>
                         <th>Akcija</th>
+                        <th>Delete</th>
                     </tr>
                 </thead>
                 <tfoot>
@@ -29,7 +31,9 @@
                         <th>Ime</th>
                         <th>Prezime</th>
                         <th>Email</th>
+                        <th>Uloga</th>
                         <th>Akcija</th>
+                        <th>Delete</th>
                     </tr>
                 </tfoot>
                    <tbody>
@@ -39,7 +43,9 @@
                         <td>{{ $korisnik->ime }}</td>
                         <td>{{ $korisnik->prezime }}</td>
                         <td>{{ $korisnik->email }}</td>
+                        <td>{{ $korisnik->uloga ? $korisnik->uloga->naziv : ""   }}</td>
                         <td><a class="btn btn-primary" href="{{ route('korisnik.edit', $korisnik->id) }}">Edit</a></td>
+                        <td><a class="btn btn-danger" href="{{ route('obrisiKorisnika', $korisnik->id) }}">Delete</a></td>
 
                     </tr>
                     @endforeach
