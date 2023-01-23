@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\KorisnikController;
+use App\Http\Controllers\UlogaController;
 use Illuminate\Support\Facades\Route;
 
 /*

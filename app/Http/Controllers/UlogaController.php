@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Student;
 use App\Models\Uloga;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,8 @@ class UlogaController extends Controller
      */
     public function index()
     {
-        //
+       $studenti = Student::with(['predmeti'])->get();
+       dd($studenti);
     }
 
     /**

@@ -84,6 +84,7 @@ class KorisnikController extends Controller
           $uloge = Uloga::all();
 
         return view('users.edit', compact('korisnik', 'uloge'));
+        /* return view('users.edit', ["korisnik" => $korisnik, "uloge" => $uloge]);  ista stvar */
     }
 
     /**
