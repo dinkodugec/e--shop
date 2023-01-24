@@ -15,11 +15,11 @@ class StudentPredmet extends Model
 
     public function Student()
     {
-         $this->hasOne(Student::class, 'id', 'student_id' );
+        return  $this->hasOne(Student::class, 'id', 'student_id' );
     }
 
     public function Predmet()
     {
-         $this->hasOne(Predmet::class, 'id', 'predmet_id' );
+        return  $this->hasOne(Predmet::class, 'id', 'predmet_id' );
     }
 }

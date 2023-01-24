@@ -15,6 +15,6 @@ class Predmet extends Model
 
     public function studenti()
     {
-        $this->belongsToMany(Student::class, "student_predmet");
+        return  $this->belongsToMany(Student::class, "student_predmet");
     }
 }
