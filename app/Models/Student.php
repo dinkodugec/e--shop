@@ -15,6 +15,6 @@ class Student extends Model
 
     public function predmeti()
     {
-        return  $this->belongsToMany(Predmet::class, "student_predmet");
+        return  $this->belongsToMany(Predmet::class, "student_predmet")->withPivot('ocjena');
     }
 }

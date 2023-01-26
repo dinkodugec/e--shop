@@ -15,8 +15,24 @@ class UlogaController extends Controller
      */
     public function index()
     {
-       $studenti = Student::with(['predmeti'])->get();
-       dd($studenti);
+      /*  $studenti = Student::with(['predmeti' => function($query){
+        $query->where('ocjena', '>=', 8);
+       } ])->get();
+        dd($studenti);
+
+        ova funkcija vraca sve studente s njihovim predmetima koji imaju ocjenu vecu od 8
+
+        */
+
+        $studenti = Student::with(['predmeti'])->whereHas('predmeti', function($query){
+            $query->where('ocjena', '>=', 9);
+        })->get();
+
+
+         /*    ova metoda vraca studente kojima je je bar jedan predmet položen s ocjenom 9 ili više */
+
+         return view('users.studenti', compact('studenti') );
+
     }
 
     /**
